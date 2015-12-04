@@ -1,0 +1,29 @@
+<h1>Communities#show</h1>
+<p>Find me in app/views/communities/show.html.erb</p>
+
+COMM
+<h1><%= @community.name %></h1>
+<br>
+
+COLLECTIONS
+<ul>
+<% @collections.each do |collection| %>
+    <li><%= link_to collection.name, collection_path(collection.id) %></li>
+<%end%>
+</ul>
+<br>
+
+SUB-COMMUNITIES
+<ul>
+<% @subCommunities.each do |subcomm| %>
+    <li><%= link_to subcomm.name, community_path(subcomm.id)%></li>
+<%end%>
+</ul>
+<br>
+
+PARENT COMMUNITY
+<% if @community.parent_community.present? %>
+    <%= link_to @community.parent_community.name, community_path(@community.parent_community.id) %>
+<%else%>
+    None
+<%end%>
