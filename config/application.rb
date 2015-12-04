@@ -22,5 +22,7 @@ module Drail
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.dspace_rest_url = 'https://trydspace.longsight.com/rest'
   end
 end
