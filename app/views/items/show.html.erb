@@ -1,3 +1,30 @@
 <h1>Items#show</h1>
 <p>Find me in app/views/items/show.html.erb</p>
 <h1><%= @item.name %></h1>
+PARENT COMMUNITY LIST
+<ul>
+<% @item.parent_community_list.each do |parentComm| %>
+    <li><%=link_to parentComm.name, community_path(parentComm.id)%></li>
+<%end%>
+</ul>
+
+PARENT COLLECTION
+<ul>
+<li><%= link_to @item.parent_collection.name, collection_path(@item.parent_collection.id) %></li>
+</ul>
+<br>
+METADATA
+<ul>
+<% @item.metadata.each do |meta| %>
+    <li><%= meta.key + ": " + meta.value %></li>
+<%end%>
+</ul>
+<br>
+
+BITSTREAMS
+<ul>
+<% @item.bit_streams.each do |bitstream| %>
+    <!-- TODO: proper url -->
+    <li><%= link_to(bitstream.name, Rails.application.config.dspace_rest_url + bitstream.retrieve_link) + " " + bitstream.format + " " + bitstream.bundle_name%></li>
+<%end%>
+</ul>
