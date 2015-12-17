@@ -24,10 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 #https://gitlab.c3sl.ufpr.br/c3sl/dspace-rest-client/
-gem 'dspace_rest_client'
-gem 'resource_kit'
-gem 'faraday'
-gem 'net-http-persistent'
+gem 'dspace_rest_client', '~> 2.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

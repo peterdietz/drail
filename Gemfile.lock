@@ -56,7 +56,12 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.0)
     debug_inspector (0.0.2)
-    dspace_rest_client (2.0.0)
+    dspace_rest_client (2.1.0)
+      activesupport (~> 4.2, >= 4.2.0)
+      faraday (~> 0.9.2)
+      json (~> 1.8, >= 1.8.3)
+      net-http-persistent (~> 2.9, >= 2.9.4)
+      resource_kit (~> 0.1.4)
     erubis (2.7.0)
     execjs (2.6.0)
     faraday (0.9.2)
@@ -160,14 +165,11 @@ DEPENDENCIES
   binding_of_caller
   byebug
   coffee-rails (~> 4.1.0)
-  dspace_rest_client
-  faraday
+  dspace_rest_client (~> 2.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-  net-http-persistent
   pg
   rails (= 4.2.0)
-  resource_kit
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
