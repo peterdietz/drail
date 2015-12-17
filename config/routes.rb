@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Drail::Application.routes.draw do
   resources :communities, :collections, :items, :bitstreams
 
   root 'communities#index'
