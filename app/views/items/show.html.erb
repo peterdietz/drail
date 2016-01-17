@@ -4,27 +4,104 @@
     </li>
     <li class="breadcrumb-separator">/</li>
     <% @item.parent_community_list.each do |parentComm| %>
-        <li><%=link_to parentComm.name, community_path(parentComm.id)%></li>
+        <li><%= link_to parentComm.name, community_path(parentComm.id) %></li>
         <li class="breadcrumb-separator">/</li>
-    <%end%>
+    <% end %>
     <li><%= link_to @item.parent_collection.name, collection_path(@item.parent_collection.id) %></li>
     <li class="breadcrumb-separator">/</li>
     <%= @item.name %>
 </ol>
 <h1><%= @item.name %></h1>
 
+<div class="row">
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-xs-6 col-sm-12">
+                <div id="ember1449" class="ember-view simple-item-view-section">
+                    <div class="simple-item-view-section-body ">
+                        <div id="ember1463" class="ember-view thumbnail">
+                            <a class="image-link" href="rest/bitstreams/17/retrieve" download="test_word.docx" title="Download test_word.docx">
+                                <img alt="No Thumbnail [93x120]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2293%22%20height%3D%22120%22%20viewBox%3D%220%200%2093%20120%22%20preserveAspectRatio%3D%22none%22%3E%3C!--%0ASource%20URL%3A%20holder.js%2F93x120%3Ftext%3DNo%20Thumbnail%0ACreated%20with%20Holder.js%202.8.2.%0ALearn%20more%20at%20http%3A%2F%2Fholderjs.com%0A(c)%202012-2015%20Ivan%20Malopinsky%20-%20http%3A%2F%2Fimsky.co%0A--%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%3C!%5BCDATA%5B%23holder_1525065bfd7%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%5D%5D%3E%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1525065bfd7%22%3E%3Crect%20width%3D%2293%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%2F%3E%3Cg%3E%3Ctext%20x%3D%2235.6171875%22%20y%3D%2257%22%3ENo%3C%2Ftext%3E%3Ctext%20x%3D%2210.8125%22%20y%3D%2272%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/93x120?text=No Thumbnail" data-holder-rendered="true" style="width: 93px; height: 120px;">
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-12">
+                <div id="ember1472" class="ember-view">
+                    <div id="ember1579" class="ember-view simple-item-view-section">
+                        <h4 class="simple-item-view-section-head ">Files</h4>
+
+                        <div class="simple-item-view-section-body ">
+                            <div><a href="rest/bitstreams/17/retrieve" download="test_word.docx">
+                                <span aria-hidden="true" class="glyphicon glyphicon-file"></span> test_word.docx (9KiB)
+                            </a></div>
+                            <div><a href="rest/bitstreams/18/retrieve" download="test_pdf.pdf">
+                                <i aria-hidden="true" class="glyphicon glyphicon-file"></i> test_pdf.pdf (30KiB)
+                            </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% @item.metadata.each do |meta| %>
+            <div class="ember-view simple-item-view-date">
+                <div class="ember-view simple-item-view-section">
+                    <h4 class="simple-item-view-section-head "><%= meta.key %></h4>
+                    <div class="simple-item-view-section-body ">
+                        <div><%= meta.value%></div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+
+        <div id="ember1505" class="ember-view simple-item-view-metadata">
+            <div id="ember1506" class="ember-view simple-item-view-section">
+                <h4 class="simple-item-view-section-head ">Metadata</h4>
+
+                <div class="simple-item-view-section-body ">
+                    <a id="ember1507" href="/items/4/full" class="ember-view">Show full item record</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-8">
+        <% @item.metadata.each do |meta| %>
+            <div class="ember-view simple-item-view-abstract">
+                <div class="ember-view simple-item-view-section">
+                    <h4 class="simple-item-view-section-head"><%= meta.key %></h4>
+                    <div class="simple-item-view-section-body "><%= meta.value %></div>
+                </div>
+            </div>
+        <% end %>
+
+
+        <div class="ember-view simple-item-view-collections">
+            <div class="ember-view simple-item-view-section">
+                <h4 class="simple-item-view-section-head ">Collections</h4>
+
+                <div class="simple-item-view-section-body ">
+                    <div>
+                        <%= link_to @item.parent_collection.name, collection_path(@item.parent_collection.id) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 METADATA
-<ul>
-<% @item.metadata.each do |meta| %>
-    <li><%= meta.key + ": " + meta.value %></li>
-<%end%>
-</ul>
+
 <br>
 
 BITSTREAMS
 <ul>
-<% @item.bit_streams.each do |bitstream| %>
-    <!-- TODO: proper url -->
-    <li><%= link_to(bitstream.name, Rails.application.config.dspace_rest_url + bitstream.retrieve_link) + " " + bitstream.format + " " + bitstream.bundle_name%></li>
-<%end%>
+    <% @item.bit_streams.each do |bitstream| %>
+        <!-- TODO: proper url -->
+        <li><%= link_to(bitstream.name, Rails.application.config.dspace_rest_url + bitstream.retrieve_link) + " " + bitstream.format + " " + bitstream.bundle_name %></li>
+    <% end %>
 </ul>
