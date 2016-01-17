@@ -1,7 +1,14 @@
-<h1>Communities#show</h1>
-<p>Find me in app/views/communities/show.html.erb</p>
-
-COMM
+<ol class="breadcrumb">
+    <li title="Home">
+        <a id="ember724" href="/" class="ember-view active">Home</a>
+    </li>
+    <li class="breadcrumb-separator">/</li>
+    <% if @community.parent_community %>
+        <li><%=link_to @community.parent_community.name, community_path(@community.parent_community.id)%></li>
+        <li class="breadcrumb-separator">/</li>
+    <%end%>
+    <%= @community.name %>
+</ol>
 <h1><%= @community.name %></h1>
 <br>
 

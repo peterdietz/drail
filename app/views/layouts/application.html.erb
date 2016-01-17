@@ -39,7 +39,34 @@
     </div>
 </div>
 
-<div class="container"><%= yield %></div>
+<div class="container">
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <aside id="ember512" class="ember-view sidebar-menu">
+            <section id="ember534" class="sidebar-section ember-view">
+                <div id="ember543" class="ember-view sidebar-simple-section-element"><span>My Account</span>
+                </div>
+                <ul>
+                    <li id="ember545" class="ember-view">
+                        <div id="ember546" class="ember-view sidebar-simple-section-element"><a>Logout</a>
+                        </div>
+                        <!----></li>
+                </ul>
+            </section>
+            <section id="ember548" class="sidebar-section ember-view">
+                <div id="ember549" class="ember-view sidebar-simple-section-element"><span>Submissions</span>
+                </div>
+                <ul>
+                    <li id="ember551" class="ember-view">
+                        <div id="ember552" class="ember-view sidebar-simple-section-element">
+                            <a id="ember553" href="/items/new" class="ember-view">Submit a new item</a>
+                        </div>
+                        <!----></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+    <div class="col-md-9"><%= yield %></div>
+</div>
 
 <hr>
 <footer>

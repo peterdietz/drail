@@ -1,18 +1,18 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<ol class="breadcrumb">
+    <li title="Home">
+        <a id="ember724" href="/" class="ember-view active">Home</a>
+    </li>
+    <li class="breadcrumb-separator">/</li>
+    <% @item.parent_community_list.each do |parentComm| %>
+        <li><%=link_to parentComm.name, community_path(parentComm.id)%></li>
+        <li class="breadcrumb-separator">/</li>
+    <%end%>
+    <li><%= link_to @item.parent_collection.name, collection_path(@item.parent_collection.id) %></li>
+    <li class="breadcrumb-separator">/</li>
+    <%= @item.name %>
+</ol>
 <h1><%= @item.name %></h1>
-PARENT COMMUNITY LIST
-<ul>
-<% @item.parent_community_list.each do |parentComm| %>
-    <li><%=link_to parentComm.name, community_path(parentComm.id)%></li>
-<%end%>
-</ul>
 
-PARENT COLLECTION
-<ul>
-<li><%= link_to @item.parent_collection.name, collection_path(@item.parent_collection.id) %></li>
-</ul>
-<br>
 METADATA
 <ul>
 <% @item.metadata.each do |meta| %>
