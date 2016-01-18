@@ -32,12 +32,12 @@
                         <h4 class="simple-item-view-section-head ">Files</h4>
 
                         <div class="simple-item-view-section-body ">
-                            <div><a href="rest/bitstreams/17/retrieve" download="test_word.docx">
-                                <span aria-hidden="true" class="glyphicon glyphicon-file"></span> test_word.docx (9KiB)
-                            </a></div>
-                            <div><a href="rest/bitstreams/18/retrieve" download="test_pdf.pdf">
-                                <i aria-hidden="true" class="glyphicon glyphicon-file"></i> test_pdf.pdf (30KiB)
-                            </a></div>
+                            <% @item.bit_streams.each do |bitstream| %>
+                                <div><%= link_to Rails.application.config.dspace_rest_url + bitstream.retrieve_link do %>
+                                        <span aria-hidden="true" class="glyphicon glyphicon-file"></span> <%= truncate(bitstream.name) %> (9KiB)
+                                    <% end %>
+                                </div>
+                            <% end %>
                         </div>
                     </div>
                 </div>
@@ -90,18 +90,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-METADATA
-
-<br>
-
-BITSTREAMS
-<ul>
-    <% @item.bit_streams.each do |bitstream| %>
-        <!-- TODO: proper url -->
-        <li><%= link_to(bitstream.name, Rails.application.config.dspace_rest_url + bitstream.retrieve_link) + " " + bitstream.format + " " + bitstream.bundle_name %></li>
-    <% end %>
-</ul>
