@@ -3625,7 +3625,7 @@ tbody.collapse.in {
     margin-left: 2px; }
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff;
-    background-color: #1f3f5e; }
+    background-color: #0099ff; }
 
 .nav-stacked > li {
     float: none; }
@@ -5850,7 +5850,7 @@ button.close {
     0% {
         background: #eeeeee; }
     10% {
-        background: #1f3f5e; }
+        background: #0099ff; }
     40% {
         background: #eeeeee; } }
 
@@ -5858,7 +5858,7 @@ button.close {
     0% {
         background: #eeeeee; }
     10% {
-        background: #1f3f5e; }
+        background: #0099ff; }
     40% {
         background: #eeeeee; } }
 
@@ -5866,7 +5866,7 @@ button.close {
     0% {
         background: #eeeeee; }
     10% {
-        background: #1f3f5e; }
+        background: #0099ff; }
     40% {
         background: #eeeeee; } }
 
@@ -5905,7 +5905,7 @@ button.close {
     right: -1.2em; }
 
 header .navbar.navbar-inverse {
-    background-color: #1f3f5e;
+    background-color: #0099ff;
     color: #fafafa; }
 header .navbar.navbar-inverse .navbar-brand {
     color: #fafafa;
@@ -6014,8 +6014,8 @@ header .navbar.navbar-inverse .navbar-brand {
     font-weight: 100;
     letter-spacing: 0.1em;
     color: #fff;
-    background-color: #1f3f5e;
-    border-color: #1f3f5e;
+    background-color: #0099ff;
+    border-color: #0099ff;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px; }
 .sidebar-section > ul {
