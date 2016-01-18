@@ -60,7 +60,7 @@
                 <h4 class="simple-item-view-section-head ">Metadata</h4>
 
                 <div class="simple-item-view-section-body ">
-                    <a id="ember1507" href="/items/4/full" class="ember-view">Show full item record</a>
+                    <%= link_to("Show full item record", controller: "items", action: "full", id: @item.id) %>
                 </div>
             </div>
         </div>

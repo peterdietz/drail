@@ -1,5 +1,11 @@
 Drail::Application.routes.draw do
-  resources :communities, :collections, :items, :bitstreams
+  resources :communities, :collections, :bitstreams
+
+  resources :items do
+    member do
+      get :full
+    end
+  end
 
   root 'communities#index'
 

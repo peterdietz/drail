@@ -7,4 +7,9 @@ class ItemsController < ApplicationController
     @item = @client.items.find(:id => params[:id], :expand => "all")
     render :layout => "application"
   end
+
+  def full
+    @item = @client.items.find(:id => params[:id], :expand => "all")
+    render :layout => "application"
+  end
 end
